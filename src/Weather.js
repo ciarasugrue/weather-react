@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import './Weather.css';
 import axios from "axios";
+import './Weather.css';
 
 export default function Weather() {
 const [loaded, setLoaded] = useState(false);
@@ -39,10 +39,10 @@ return (
         </div>
     </div>
     );
-    } else {
+} else {
     const apiKey = "eb6eea518ef4b4002fbbf1c966d1b147";
     let city = "Lyon";
-    const apiUrl = `api.openweathermap.org/data/2.5/weather?q=${city}}&appid=${apiKey}`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}}&appid=${apiKey}`;
     axios.get(apiUrl).then(handleResponse);  
 
     return "Loading...";
