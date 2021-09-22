@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FormattedDate from './FormattedDate';
 import axios from "axios";
 import './Weather.css';
 
@@ -10,7 +11,8 @@ setWeather({
     temperature: response.data.main.temp,
     city: response.data.name,
     humidity: response.data.main.humidity,
-    wind: response.data.wind.speed
+    wind: response.data.wind.speed,
+    date: new Date(response.data.dt * 1000)
 });
 setLoaded(true);
 }
@@ -19,6 +21,9 @@ if (loaded) {
 return (
     <div className="weather">
         <h1>{weather.city}</h1>
+        <h2>
+            <FormattedDate date={weather.date} />
+        </h2>
         <form>
             <div className="row">
                 <div className="col-9">
