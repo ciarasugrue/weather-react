@@ -2,18 +2,23 @@ import React, { useState } from "react";
 import axios from "axios";
 import './Weather.css';
 
-export default function Weather() {
+export default function Weather(props) {
 const [loaded, setLoaded] = useState(false);
 const [weather, setWeather] = useState(null);
 function handleResponse(response) {
-setWeather(response.data.main.temp);
+setWeather({
+    temperature: response.data.main.temp,
+    city: response.data.name,
+    humidity: response.data.main.humidity,
+    wind: response.data.wind.speed
+});
 setLoaded(true);
 }
     
 if (loaded) {
 return (
     <div className="weather">
-        <h1>Lyon</h1>
+        <h1>{weather.city}</h1>
         <form>
             <div className="row">
                 <div className="col-9">
@@ -32,17 +37,31 @@ return (
                 </div>
             </div>
         </form>
+    <div className="row">
+        <div className="col-6">
         <div className="float-left">
             <span className="temperature">
-                {weather}
+                {Math.round(weather.temperature)}
             </span>
+            <span className="unit">°C</span>
         </div>
-    </div>
+        </div>
+        <div className="col-6">
+            <ul>
+                <li>
+                    Wind: {weather.wind} km/hr
+                </li>
+                <li>
+                    Humidity: {weather.humidity}%
+                </li>
+            </ul>
+        </div>
+        </div>
+        </div>
     );
 } else {
     const apiKey = "eb6eea518ef4b4002fbbf1c966d1b147";
-    let city = "Lyon";
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}}&appid=${apiKey}`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);  
 
     return "Loading...";
