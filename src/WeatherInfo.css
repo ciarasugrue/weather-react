@@ -1,10 +1,11 @@
 h1 {
     font-size: 40px;
-    color: #385170;
+    color: #757a79;
 }
 
 h2 {
     font-size: medium;
+    color: #757a79;
 }
 
 .temperature {
@@ -13,4 +14,9 @@ h2 {
 
 .float-left {
     float: left;
+}
+
+.list {
+    list-style: none;
+    color: #757a79;
 }
