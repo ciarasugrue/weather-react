@@ -4,19 +4,33 @@ h1 {
 }
 
 h2 {
+    list-style: none;
     font-size: medium;
+    font-weight: bolder;
     color: #757a79;
+}
+
+.currently {
+    color: #757a79;
+    list-style: none;
+    padding: 0;
 }
 
 .temperature {
     font-size: 60px;
 }
 
+.float-left .icon {
+ padding-bottom: 0;
+ margin-bottom: 0;
+}
+
 .float-left {
     float: left;
 }
 
-.list {
-    list-style: none;
+.conditions {
+    font-weight: 500;
     color: #757a79;
+    list-style: none;
 }

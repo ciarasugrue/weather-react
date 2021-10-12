@@ -13,6 +13,7 @@ setWeatherData({
     temperature: response.data.main.temp,
     city: response.data.name,
     coords: response.data.coord,
+    description: response.data.weather[0].description,
     humidity: response.data.main.humidity,
     wind: response.data.wind.speed,
     icon: response.data.weather[0].icon,

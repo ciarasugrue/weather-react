@@ -1,5 +1,12 @@
-.Weather {
-    background-color: #bbe9db;
+form {
+    margin: 5px;
+}
+
+.col-9 {
+    padding-right: 1px;
+}
+.col-3 {
+    padding-left: 1px;
 }
 
 .Weather .unit {
