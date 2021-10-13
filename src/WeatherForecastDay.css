@@ -1,0 +1,8 @@
+.WeatherForecast-temps {
+    font-size:13px;
+    font-weight: 400;
+}
+
+.WeatherForecast-temp-max {
+    color: black;
+}

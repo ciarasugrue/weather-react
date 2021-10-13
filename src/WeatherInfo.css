@@ -20,11 +20,6 @@ h2 {
     font-size: 60px;
 }
 
-.float-left .icon {
- padding-bottom: 0;
- margin-bottom: 0;
-}
-
 .float-left {
     float: left;
 }
